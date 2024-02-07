@@ -59,4 +59,14 @@ y_pred=robot.predict(X=X_test)
 y_pred=dict_scaler[target].inverse_transform(y_pred.reshape(-1, 1))
 st.write(y_pred)
 
+import matplotlib.pyplot as plt
+import seaborn as sns 
+
+fig, ax=plt.subplots()
+ax.hist(x=Data[target])
+st.pyplot(fig)
+
+fig,ax=plt.subplots()
+sns.heatmap(data=Data.corr(),ax=ax)
+st.pyplot(fig)
 
